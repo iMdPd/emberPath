@@ -5,7 +5,15 @@
     value=''
     id='thirdCheckbox'
     checked={{@item.isDone}}
+    {{on 'change' this.onToggleIsDone}}
   />
-  <label class='form-check-label' for='thirdCheckbox'>{{@item.label}}</label>
-  <button type='button' class='btn btn-danger'>REMOVE</button>
+  <label
+    class='form-check-label'
+    for='thirdCheckbox'
+  >{{@item.description}}</label>
+  <button
+    type='button'
+    class='btn btn-danger'
+    {{on 'click' this.onRemoveTask}}
+  >REMOVE</button>
 </li>
